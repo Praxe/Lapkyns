@@ -133,9 +133,17 @@ function update()
 	if ( keyboard.down("left") ) 
 		mesh.translateX( -50 );
 		
+	if ( keyboard.down("bottom") ) 
+		mesh.translateY( -50 );
+	
 	if ( keyboard.down("right") ) 
 		mesh.translateX(  50 );
 
+	
+	if ( keyboard.down("top") ) 
+		mesh.translateY(  50 );
+	
+	
 	if ( keyboard.pressed("A") )
 		mesh.translateX( -moveDistance );
 		
