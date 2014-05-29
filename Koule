@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -90,9 +91,9 @@ function init()
 	light.position.set(100,250,100);
 	scene.add(light);
 	// FLOOR
-	var floorTexture = new THREE.ImageUtils.loadTexture( 'images/checkerboard.jpg' );
+	var floorTexture = new THREE.ImageUtils.loadTexture( 'images/images.png' );
 	floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping; 
-	floorTexture.repeat.set( 10, 10 );
+	floorTexture.repeat.set( 1, 1 );
 	var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
 	var floorGeometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
 	var floor = new THREE.Mesh(floorGeometry, floorMaterial);
@@ -133,24 +134,29 @@ function update()
 	if ( keyboard.down("left") ) 
 		mesh.translateX( -50 );
 		
-	if ( keyboard.down("bottom") ) 
-		mesh.translateY( -50 );
-	
 	if ( keyboard.down("right") ) 
 		mesh.translateX(  50 );
 
-	
-	if ( keyboard.down("top") ) 
-		mesh.translateY(  50 );
-	
-	
 	if ( keyboard.pressed("A") )
 		mesh.translateX( -moveDistance );
 		
 	if ( keyboard.pressed("D") )
 		mesh.translateX(  moveDistance );
 		
-	if ( keyboard.down("R") )
+if ( keyboard.pressed("W") )
+		mesh.translateZ( -moveDistance );
+		
+	if ( keyboard.pressed("S") )
+		mesh.translateZ(  moveDistance );	
+
+if ( keyboard.pressed("Q") )
+		mesh.translateY( -moveDistance );
+		
+	if ( keyboard.pressed("E") )
+		mesh.translateY(  moveDistance );
+
+
+if ( keyboard.down("R") )
 		mesh.material.color = new THREE.Color(0xff0000);
 	if ( keyboard.up("R") )
 		mesh.material.color = new THREE.Color(0x0000ff);
