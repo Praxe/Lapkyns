@@ -91,7 +91,7 @@ function init()
 	light.position.set(100,250,100);
 	scene.add(light);
 	// FLOOR
-	var floorTexture = new THREE.ImageUtils.loadTexture( 'images/images.png' );
+	var floorTexture = new THREE.ImageUtils.loadTexture( 'images/images.jpg' );
 	floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping; 
 	floorTexture.repeat.set( 1, 1 );
 	var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
